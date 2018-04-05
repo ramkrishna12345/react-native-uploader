@@ -8,7 +8,8 @@ Thanks to [@g6ling](https://github.com/g6ling) for great module.
 
 ## Install
 ### Use rnpm
-1. `npm install https://github.com/arunbaiswal/react-native-uploader.git --save`
+1. `npm install https://github.com/
+baiswal/react-native-uploader.git --save`
 2. `rnpm link react-native-uploader`
 
 
@@ -53,7 +54,7 @@ private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
 
 ## Example
 This is a simple demo for upload image. It can be run both Android and iOs.
-See it in [https://github.com/tranquangvu/react-native-uploader-demo](https://github.com/tranquangvu/react-native-uploader-demo)
+See it in [https://github.com/arunbaiswal/react-native-uploader-demo](https://github.com/arunbaiswal/react-native-uploader-demo)
 
 ## Usage
 ```javascript
