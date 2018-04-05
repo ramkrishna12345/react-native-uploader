@@ -2,14 +2,11 @@
 A React Native module for uploading files and camera roll assets in Android and iOS. Supports progress notification.
 
 ## Note
-This module is a cover of [https://github.com/g6ling/react-native-uploader](https://github.com/g6ling/react-native-uploader). I cover it to make it suitable for my project. And I see it useful and share it.
-
-Thanks to [@g6ling](https://github.com/g6ling) for great module.
+This module is a Fork from https://github.com/tranquangvu/react-native-uploader.
 
 ## Install
 ### Use rnpm
-1. `npm install https://github.com/
-baiswal/react-native-uploader.git --save`
+1. `npm install https://github.com/arunbaiswal/react-native-uploader.git --save`
 2. `rnpm link react-native-uploader`
 
 
@@ -98,7 +95,7 @@ doUpload(){
 		url: 'http://my.server/api/upload',
 		files: files, 
 		method: 'POST',                             // optional: POST or PUT, only support ios, android always have POST
-		headers: { 'Accept': 'application/json' },  // optional, only support ios, android always have  { 'Accept': 'application/json' }
+		headers: { 'Accept': 'application/json' },  // optional, support ios and android
 		params: { 'user_id': 1 },                   // optional, Android support this only string. If you want this in Android use params: { 'user_id': '1' }
 	};
 
