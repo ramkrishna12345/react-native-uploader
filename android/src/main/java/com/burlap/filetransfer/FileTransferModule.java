@@ -93,7 +93,6 @@ public class FileTransferModule extends ReactContextBaseJavaModule {
                 headerbuild = Headers.of(header);
             } else {
                 header.put("Accept", "application/json");
-                header.put("arun", "test");
                 headerbuild = Headers.of(header);
             }
 
