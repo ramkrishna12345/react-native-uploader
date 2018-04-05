@@ -52,10 +52,6 @@ private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
 }
 ```
 
-## Example
-This is a simple demo for upload image. It can be run both Android and iOs.
-See it in [https://github.com/arunbaiswal/react-native-uploader-demo](https://github.com/arunbaiswal/react-native-uploader-demo)
-
 ## Usage
 ```javascript
 var RNUploader = require('react-native-uploader');
@@ -133,7 +129,7 @@ doUpload(){
 |---|---|---|---|---|
 |`url`|string|required|URL to upload to|`http://my.server/api/upload`|
 |`method`|string|optional|HTTP method, values: [PUT,POST], default: POST|`POST`|
-|`headers`|object|optional|HTTP headers|![#f03c15](https://placehold.it/15/f03c15/000000?text=F+I+X+E+D++I+N++A+N+D+R+O+I+D) `{ 'Accept': 'application/json' }`|
+|`headers`|object|optional|HTTP headers|`{ 'Accept': 'application/json' }`|
 |`params(iOS)`|object|optional|Query parameters|`{ 'user_id': 1  }`|
 |`params(Android)`|object|optional|Query parameters|`{ 'user_id': '1'  }`<br> only support string value. You can't use int, boolean, etc..|
 |`files`|array|required|Array of file objects to upload. See below.| `[{ name: 'file', filename: 'image1.png', filepath: 'assets-library://...', filetype: 'image/png' } ]` |
