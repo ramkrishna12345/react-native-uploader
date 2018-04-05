@@ -133,7 +133,7 @@ doUpload(){
 |---|---|---|---|---|
 |`url`|string|required|URL to upload to|`http://my.server/api/upload`|
 |`method`|string|optional|HTTP method, values: [PUT,POST], default: POST|`POST`|
-|`headers`|object|optional|HTTP headers|![#f03c15](https://placehold.it/15/f03c15/000000?text=FIXED) `{ 'Accept': 'application/json' }`|
+|`headers`|object|optional|HTTP headers|![#f03c15](https://placehold.it/15/f03c15/000000?text=F I X E D  I N  A N D R O I D ) `{ 'Accept': 'application/json' }`|
 |`params(iOS)`|object|optional|Query parameters|`{ 'user_id': 1  }`|
 |`params(Android)`|object|optional|Query parameters|`{ 'user_id': '1'  }`<br> only support string value. You can't use int, boolean, etc..|
 |`files`|array|required|Array of file objects to upload. See below.| `[{ name: 'file', filename: 'image1.png', filepath: 'assets-library://...', filetype: 'image/png' } ]` |
