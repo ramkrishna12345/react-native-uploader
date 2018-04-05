@@ -8,7 +8,7 @@ Thanks to [@g6ling](https://github.com/g6ling) for great module.
 
 ## Install
 ### Use rnpm
-1. `npm install https://github.com/tranquangvu/react-native-uploader.git --save`
+1. `npm install https://github.com/arunbaiswal/react-native-uploader.git --save`
 2. `rnpm link react-native-uploader`
 
 
