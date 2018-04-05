@@ -14,7 +14,7 @@ Thanks to [@g6ling](https://github.com/g6ling) for great module.
 
 If you don't want use rnpm, do this
 ### iOS
-* `npm install https://github.com/tranquangvu/react-native-uploader.git --save`
+* `npm install https://github.com/arunbaiswal/react-native-uploader.git --save`
 * In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
 * Go to `node_modules` ➜ `react-native-uploader` ➜ `ios` and add `RNUploader.xcodeproj`
 * In XCode, in the project navigator, select your project. Add `libRNUploader.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
