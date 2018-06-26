@@ -88,9 +88,17 @@ public class FileTransferModule extends ReactContextBaseJavaModule {
                     }
                     Uri file_uri;
                     Context context = getReactApplicationContext();
-                    file_uri = Uri.parse(getPath(context, Uri.parse(uri)));
+                    String temp_file_uri = thisGetPath(context, Uri.parse(uri));
+                    try {
+                        if (temp_file_uri.indexOf("raw:") > -1) {
+                            file_uri = Uri.parse(temp_file_uri.replaceFirst("raw:", ""));
+                        }else{
+                            file_uri = Uri.parse(temp_file_uri);
+                        }
+                    }catch (Exception e){
+                        file_uri = Uri.parse(temp_file_uri);
+                    }
                     File imageFile = new File(file_uri.getPath());
-
                     if (imageFile == null) {
                         Log.d(TAG, "FILE NOT FOUND");
                         completeCallback.invoke("FILE NOT FOUND", null);
@@ -142,7 +150,7 @@ public class FileTransferModule extends ReactContextBaseJavaModule {
         }
     }
 
-    public static String getPath(final Context context, final Uri uri) {
+    public static String thisGetPath(final Context context, final Uri uri) {
 
         final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
 
@@ -194,6 +202,13 @@ public class FileTransferModule extends ReactContextBaseJavaModule {
         }
         // MediaStore (and general)
         else if ("content".equalsIgnoreCase(uri.getScheme())) {
+            // Return the remote address
+            try {
+                if (isGooglePhotosUri(uri))
+                    return uri.getLastPathSegment();
+            }catch (Exception e){
+
+            }
             return getDataColumn(context, uri, null, null);
         }
         // File
@@ -214,8 +229,7 @@ public class FileTransferModule extends ReactContextBaseJavaModule {
      * @param selectionArgs (Optional) Selection arguments used in the query.
      * @return The value of the _data column, which is typically a file path.
      */
-    public static String getDataColumn(Context context, Uri uri, String selection,
-                                       String[] selectionArgs) {
+    public static String getDataColumn(Context context, Uri uri, String selection, String[] selectionArgs) {
 
         Cursor cursor = null;
         final String column = "_data";
@@ -260,5 +274,13 @@ public class FileTransferModule extends ReactContextBaseJavaModule {
      */
     public static boolean isMediaDocument(Uri uri) {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
+    }
+
+    /**
+     * @param uri The Uri to check.
+     * @return Whether the Uri authority is Google Photos.
+     */
+    public static boolean isGooglePhotosUri(Uri uri) {
+        return "com.google.android.apps.photos.content".equals(uri.getAuthority());
     }
 }
